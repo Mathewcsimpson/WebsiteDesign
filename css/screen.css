@@ -1,0 +1,715 @@
+/*  screen.css - TouchLay style
+
+Copyright (c) 2011 by TouchLay
+*/
+
+/* content styles */
+
+/* debug 
+* {border: 1px dotted blue;}
+*/
+
+body {
+    min-width: 1250px;
+    padding: 0;
+    border: 0;
+}
+
+a:link { color: #0084ff; text-decoration: none }
+a:link:hover, a:link:active { text-decoration: none; color: #5cb0ff }
+a:visited { text-decoration: none; color: #0084ff }
+a:visited:hover { text-decoration: none; color: #5cb0ff }
+a.nonexistent:link { color: #666 }
+a.nonexistent:hover { color: black; text-decoration: line-through }
+
+a.download {
+    font-size: 120%; 
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    background: #E7E7E7;
+    border: 1px solid #9C9C9C;
+    padding: 0.5em;
+    text-align: center;
+}
+
+input {
+    /* does strange effect to button (text size becomes bigger when clicking)
+    font-size: 1em;
+    font-family: Arial, Lucida Grande, sans-serif;
+    */
+}
+
+textarea {
+    font-size: 1em;
+    font-family: Ubuntu, monospace, Arial;
+}
+
+.disabled {
+    /* IE ignore disabled attribute, but at least show items in gray */
+    color: gray;
+}
+
+/* user interface styles */
+
+#touchnetheader {
+    z-index: 100;
+    background:rgba(0,0,0,0.7);
+    height:24px;
+    width:100%;
+    padding:5px;
+    margin:0px;
+    border-radius-bottom:5px;
+    z-index:200;
+    -moz-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
+}
+#touchnetheader ul {
+    list-style:none;
+    color:#fff;
+    display:inline;
+    margin-top:0px;
+    float:right;    
+}
+#touchnetheader li {
+    font-size:13px;
+    display:inline;
+    height:24px;
+    padding-top:5px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+}
+#touchnetheader li:last-child {
+    margin-right:15px;
+}
+#touchnetheader li a,
+#touchnetheader li a:hover {
+    color:#fff;
+    text-decoration:none;
+}
+#touchnetheader li:hover {
+    height: 24px;
+    border-top: 4px solid #4792D9;
+    background: rgba(255,255,255,0.2);
+}
+
+#header {
+    /*margin: 1px;*/
+    margin: 0 0 0 0;
+    padding: 1px;
+    background: #eaeaea url(http://www.touchlay.com/TouchLay?action=AttachFile&do=get&target=background.png) repeat-x;
+    line-height: 0;
+}
+
+#logo {
+    display: none;
+    float: left;
+    margin: 5px 10px;
+    padding: 0;
+    /* For text only logo */
+    font-size: 1.4em;
+    line-height: 1em;
+    font-weight: bold;
+}
+
+*[dir="rtl"] #logo {
+    float: right;
+}
+
+#logo img {
+    vertical-align: middle;
+}
+
+#logo a {
+    color: black;
+    text-decoration: none;
+}
+
+
+#username {
+/*    border: 2px solid #4792D9;
+    border-bottom: 0;
+    background: #FFF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    -moz-box-shadow: 0 -2px 5px #FFF;
+    -webkit-box-shadow: 0 -2px 5px#FFF;
+    box-shadow: 0 -2px 5px #FFF;
+*/
+    height: 24px;
+    padding: 0;
+    display: inline; 
+    font-size: 0.82em;
+    width: 250px;
+    padding-left:10px;
+    padding-top:5px;
+}
+
+#username a {
+    color:#fff;
+}
+
+#username form {
+    display: inline;
+}
+
+#username input {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: blue;
+    font-size: 0.82em;
+    cursor: pointer;
+}
+
+#username input:hover {
+    color: red;
+}
+
+#searchform {
+    margin-top:-25px;
+    padding-right:80px;
+    height: 26px;
+    font-size: 0.82em;
+    float: right;
+    clear: right;
+    text-align: right;
+}
+*[dir="rtl"] #searchform {
+    float: left;
+    clear: left;
+    text-align: left;
+}
+#searchform input {
+    font-size: 100%;
+    vertical-align: middle;
+    border-radius:3px;
+}
+#searchform input#searchinput {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
+    height: 25px;
+    border: 1px solid #444;
+    -moz-box-shadow: 0 0 3px #1a72d9;
+    -webkit-box-shadow: 0 0 3px#1a72d9;
+    box-shadow: 0 0 3px #1a72d9;
+}
+#searchform input#searchinput:hover{
+    border: 1px solid #444;
+}
+#searchform input#fullsearch:hover{
+    border: 1px solid #444;
+    background:#52a9fb;
+    background:-webkit-gradient(linear,left top,left bottom,from(#52a9fb),to(#4792d9));
+}
+#searchform input#titlesearch:hover{
+    border: 1px solid #444;
+    background:#52a9fb;
+    background:-webkit-gradient(linear,left top,left bottom,from(#52a9fb),to(#4792d9));
+}
+#searchform input#titlesearch {
+    margin-left: 0px;
+    font-weight:bold;
+    border-radius: 3px;
+    border: 1px solid #444;
+    height: 29px;
+    font-size:15px;
+    cursor:pointer;
+    color:#fff;
+    background:#1a9bd9;
+    background:-webkit-gradient(linear,left top,left bottom,from(#1a9bd9),to(#1a72d9));
+    text-transform:uppercase;
+    -moz-box-shadow: 0 0 3px #1a72d9;
+    -webkit-box-shadow: 0 0 3px#1a72d9;
+    box-shadow: 0 0 3px #1a72d9;
+}
+#searchform input#fullsearch {
+    border-radius: 3px;
+    margin-left: 0;
+    font-weight:bold;
+    width: 50px;
+    cursor:pointer;
+    border: 1px solid #444;
+    height: 29px;
+    color:#FFF;
+    font-size:15px;
+    background:#1a9bd9;
+    background:-webkit-gradient(linear,left top,left bottom,from(#1a9bd9),to(#1a72d9));
+    text-transform:uppercase;
+    -moz-box-shadow: 0 0 3px #1a72d9;
+    -webkit-box-shadow: 0 0 3px#1a72d9;
+    box-shadow: 0 0 3px #1a72d9;
+}
+#pagetrail {
+    display: none;
+    clear: right;
+    // display: none;
+    margin: 0 0.88em 0.25em 0.88em;
+    padding: 0;
+    font-size: 0.88em;
+}
+
+*[dir="rtl"] #pagetrail {
+    clear: left;
+}
+
+#interwiki {
+    font-size: 1em;
+}
+
+#locationline {
+    display: none;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    height: 30px;
+    clear: right;
+}
+*[dir="rtl"] #locationline {
+    clear: left;
+}
+
+#pagelocation {
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+}
+
+
+*[dir="rtl"] #pagetrail span.sep {
+    visibility: hidden;
+}
+*[dir="rtl"] #pagetrail span.sep:after {
+    content: " « ";
+}
+
+#tnnavibar{
+    width:80%;
+    height:40px;
+    padding-left: 75px;
+    background: #4792D9;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    background-image: url(http://touchlay.com/TouchLay?action=AttachFile&do=get&target=logo_header.png);
+    background-repeat: no-repeat;
+    padding-bottom: -15px;
+    padding-top: 15px;
+    font-size:20px;
+    margin-top:0;
+    margin-left:auto;
+    margin-right:auto;
+    align: center;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+#tnnavibar ul{
+    list-style:none;
+    color:#fff;
+    text-decoration:none;
+    display:inline;
+    margin:0;
+    padding:0;
+}
+#tnnavibar li{
+    display:inline;
+    margin-left:10px;
+    padding: 5px;
+    border-radius:5px;
+}
+#tnnavibar li:hover{
+    background:#1a72d9;
+}
+#tnnavibar li a,
+#tnnavibar li a:hover{
+    color: #fff;
+    text-decoration:none;
+}
+
+#navibar {
+    clear: both;  /* problem: clear: right; aligns nicely right of logo,
+                    but lets it float high in the header, disconnected from ground */
+    display: none;
+    margin-top: -255px;
+    padding: 0px 30px 0 90px;
+    font-family: Ubuntu, Pump Demi Bold LET, Arial;
+    font-size: 20px;
+    height: 50px;
+    background: #4792D9;
+    width:100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    zoom: 1; /* for avoiding a gap between navibar and pageline on IE */
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+
+#navibar li {
+    float: left;
+    display: inline;
+    margin: 0px 0px;
+    padding: 0px 20px;
+    height: 50px;
+    /*border: 1px solid #acd;
+    border-bottom: none;*/
+    border: 0px;
+    white-space: nowrap;
+}
+
+*[dir="rtl"] #navibar li {
+    float: right;
+}
+
+#navibar li.wikilink {
+    /*background: white; url(../img/tab-wiki.png) repeat-x;*/
+}
+
+#navibar li.userlink {
+    /*#E6EAF0; url(../img/tab-user.png) repeat-x;*/
+}
+
+#navibar a, #navibar a:visited {
+    padding: 17px 0px;
+    display: block;
+    color: white;
+    text-decoration: none;    
+}
+
+#navibar li.current a {
+    font-weight: bold;
+}
+
+#navibar li:hover {
+    background: #1a72d9;
+    /*background: white; #d6e4f9;*/
+}
+
+#navibar li.current, #navibar li.current:hover {
+    background: url(../img/tab-selection.png) repeat-x;
+    /*background: white; #81BBF2; url(../img/tab-selected.png) repeat-x; */
+    border: 0px;/* solid #4d7da9;
+    border-bottom: 1px solid #81bbf2;*/
+    margin-bottom: -1px;
+}
+
+#pageline {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* sync these values, line-height is needed for IE */
+    height: 4px;
+    line-height: 4px;
+    border-bottom: 1px solid #4d7da9;
+    border-top: 1px solid #4d7da9;
+    background: #81BBF2;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+
+.editbar {
+    z-index: 0;
+    clear: both;
+    display: block;
+    margin: 0;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    background: #fff;
+    background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#ddd));
+    font-size: 0.8em;
+    margin-top: -1px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+
+.editbar form, .editbar form div {
+    display: inline;
+    margin: 0;
+}
+
+body{overflow-x:hidden;}
+
+.editbar select {
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+.editbar li {
+    display: inline;
+    padding: 0;
+    margin: 4px 6px;
+}
+
+.editbar a, .editbar a:visited { color: #1a72d9; }
+
+.editbar a:hover { color: #4792d9; text-decoration: underline; }
+
+#message {
+    z-index: 0;
+    clear: both;
+    display: block;
+    height: 50px;
+    margin: 0;
+    width:70.5%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 0.8em;
+    margin-top: -1px;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    padding: 1px 15px 5px 15px;
+    background: #6B9FD9;
+}
+
+#message p {
+    margin: 5px 0;
+    padding: 0;
+    color:#000;
+    /* font-weight: bold; */
+}
+
+#message a {color:#fff;}
+
+.info a {color:#1a9bd9;}
+
+#message div.buttons {
+    font-weight: normal;
+}
+
+.dialog form {
+    margin: 0 15px;
+}
+
+.dialog td {
+    border: none;
+    padding: 5px;
+}
+
+.dialog td.label {
+    text-align: right;
+    font-weight: bold;
+    width: 25%;
+}
+
+*[dir="rtl"] .dialog td.label {
+    text-align: left;
+}
+
+.dialog td.content input {
+    width: 100%;
+}
+
+#page {
+    background-color: white;
+    margin: 25px auto 0 auto;
+    padding: 2px 20px 20px 20px;
+    z-index: 100;
+    min-height:300px;
+-webkit-box-shadow: 0px 0px 10px 1px #ffffff;
+-moz-box-shadow: 0px 0px 10px 1px #ffffff;
+box-shadow: 0px 0px 10px 1px #ffffff;
+    border-radius: 10px;
+    width:80%;
+    height:inherit;
+    /* theses are some Firefox 1.5b1 specific extensions, see also the CSS3 draft.
+    -moz-column-width: 25em;
+    -moz-column-gap: 2em;
+    -moz-column-rule: solid black 0.3em;     --   doesn't work yet with 1.5b1!
+
+    TODO: make text/gui editor NOT use #page css, we don't want columns there!
+    */
+}
+
+/* We use here dumb css1 ids because of IE suckiness */
+#editor-textarea, #editor-help {
+    font-family: Ubuntu, monospace, Arial;
+    border: 1px solid #8cacbb;  
+    color: black;
+    background-color: white;
+    padding: 3px;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+#editor-help {
+    font-size: small;
+    background-color: #EEEEFF;
+}
+
+#editor-comment {
+    font-size: 100%;
+    border: 1px solid #8cacbb;
+    color: black;
+    background-color: white;
+    vertical-align: middle;
+    padding: 1px;
+    display: inline;
+    width: 70%;
+}
+
+#preview, #previewbelow {
+    border: 1px solid #6C7680;
+    padding: 10px 30px 20px 30px;
+    background: url(../img/draft.png);
+    margin-top: 0.5em;
+}
+
+#textcha {
+    font-size: 100%;
+    margin-top: 0.5em;
+    border: 2px solid #FF8888;
+    color: black;
+    vertical-align: middle;
+    padding: 3px 2px;
+}
+
+#textcha-answer {
+    border: 2px solid #000000;
+    padding: 3px 2px;
+}
+
+input.button {
+    /*
+    border: 1px solid #8cacbb;  
+    color: black;
+    background-color: #CCCCCC;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 100%;
+    cursor: pointer;
+    margin: 2px;
+    padding: 1px;
+    display: inline;
+    */
+}
+
+#footer {
+/*    clear: both;
+    margin: -2px auto 0 auto;
+    padding: 1px;
+    margin: 0;
+    margin-left:auto;
+    margin-right:auto;
+    width: 80%;*/
+    width: 100%;
+}
+
+#credits, #version, #timings{
+    width: 80%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    padding-bottom: 15px;
+    color: black;
+    text-align: center;
+    font-size: 0.88em;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    /*color: #6C7680;*/
+}
+
+#credits li, #timings li {
+    display: inline;
+    padding: 0 2px;
+    margin: 0 4px;
+}
+
+#credits img {
+    vertical-align: middle;
+}
+
+.diff {
+    width:99%;
+    table-layout: fixed;
+}
+
+.diff-header {
+    font-weight: bold;
+}
+
+.diff-title {
+    background-color: #C0C0C0;
+}
+
+.diff-added {
+    background-color: #E0FFE0;
+    vertical-align: top;
+    width: 50%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Ubuntu, courier, monospace, Arial;
+}
+
+.diff-removed {
+    background-color: #FFFFE0;
+    vertical-align: top;
+    width: 50%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Ubuntu, courier, monospace, Arial;
+}
+
+.diff-added span {
+    background-color: #80FF80;
+}
+
+.diff-removed span {
+    background-color: #FFFF80;
+}
+
+td.diff-info {
+    vertical-align: top;
+}
+
+div.diff-info {
+    white-space: nowrap;
+}
+
+div.diff-info-rev-comment span.diff-info-value {
+    white-space: normal;
+}
+
+div.diff-info-header {
+    background-color: #E8E8E8;
+    width: 100%;
+    padding: 0.25em 0.5em;
+    margin: -0.25em -0.5em;
+    margin-bottom: 0.25em;
+    text-align: center;
+}
+
+td.diff-same {
+    text-align: center;
+    border: 0;
+}
+
+table.navigation {
+    float: right;
+    margin: 2px;
+}
+
+#openididentifier {
+    background: url(../../common/openid.png) no-repeat;
+    background-position: 0 50%;
+    padding-left: 18px;
+}
